@@ -4,29 +4,13 @@ import history from 'helpers/history'
 import * as userActions from 'redux/actions/users'
 import * as userTypes from 'redux/constants/user-types'
 
-import { Auth } from 'aws-amplify'
-
 function* login(action) {
   try {
-    //=======
-    // STEP 3
-    //=======
-    // yield amplify signin here
-    const {
-      username,
-      signInUserSession: {
-        accessToken: { jwtToken },
-      },
-    } = yield call((user) => {
-      const { password, usernameEmail: username } = user
-      return Auth.signIn(username, password)
-    }, action.payload)
-
-    localStorage.token = jwtToken
-    localStorage.username = username
+    localStorage.token = 'token'
+    localStorage.username = 'username'
 
     history.replace('/')
-    yield put(userActions.userLoginSuccess({ user: { username, jwtToken } }))
+    yield put(userActions.userLoginSuccess({ user: { username: 'username', jwtToken: 'jwtToken' } }))
   } catch (err) {
     yield put(userActions.userLoginFailure(err.message))
   }
@@ -40,18 +24,7 @@ function* logout() {
 
 function* register(action) {
   try {
-    //=======
-    // STEP 2
-    //=======
-    // yield amplify signup here
-    const signUpResponse = yield call((user) => {
-      const { email, password, username } = user
-      return Auth.signUp({
-        username,
-        password,
-        attributes: { email },
-      })
-    }, action.payload)
+    const signUpResponse = { user: { username: 'username' } }
 
     yield put(userActions.userRegisterSuccess(signUpResponse.user))
   } catch (err) {
