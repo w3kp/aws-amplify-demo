@@ -3,10 +3,13 @@ import { Typography } from 'antd'
 
 import * as styles from './DashboardStyles'
 
+const { Text } = Typography
+
 const Dashboard = () => {
   return (
     <>
-      <Typography.Title style={styles.titleStyle}>WELCOME from Apper Team!</Typography.Title>
+      <Typography.Title style={styles.titleStyle}>WELCOME {localStorage.username}!</Typography.Title>
+      <Text type='secondary'>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</Text>
     </>
   )
 }

@@ -41,7 +41,7 @@ const Signup = () => {
         <Row>
           <Col {...styles.titleLayout}>
             <Title>Registration</Title>
-            <Text type='secondary'>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</Text>
+            <Text type='secondary'>Most great people have attained their greatest success just one step beyond their greatest failure.</Text>
           </Col>
         </Row>
         <SignupForm loading={loading} submit={onRegister} apiError={apiError} />

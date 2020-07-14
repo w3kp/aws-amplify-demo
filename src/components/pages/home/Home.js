@@ -39,7 +39,7 @@ const Home = () => {
               <Route path='/dashboard' component={Dashboard} />
               <Redirect to='/dashboard' />
             </Switch>
-            <div width='200px'>
+            <div width='200px' style={{ marginTop: '40px' }}>
               <ButtonComponent type='primary' onClick={logoutCB}>
                 SIGN OUT
               </ButtonComponent>

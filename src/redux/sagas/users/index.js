@@ -12,20 +12,28 @@ function* login(action) {
     // STEP 3
     //=======
     // yield amplify signin here
-    const signInResponse = yield call((user) => {
+    const {
+      username,
+      signInUserSession: {
+        accessToken: { jwtToken },
+      },
+    } = yield call((user) => {
       const { password, usernameEmail: username } = user
       return Auth.signIn(username, password)
     }, action.payload)
-    localStorage.token = true
+
+    localStorage.token = jwtToken
+    localStorage.username = username
+
     history.replace('/')
-    yield put(userActions.userLoginSuccess(signInResponse.user))
+    yield put(userActions.userLoginSuccess({ user: { username, jwtToken } }))
   } catch (err) {
     yield put(userActions.userLoginFailure(err.message))
   }
 }
 
 function* logout() {
-  localStorage.removeItem('token')
+  localStorage.clear()
   history.push('/login')
   yield put(userActions.userLogoutSuccess())
 }

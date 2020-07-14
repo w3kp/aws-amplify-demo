@@ -2,30 +2,23 @@ import styled from 'styled-components'
 
 export const columnLayout = {
   xl: {
-    span: 10,
-    offset: 7
+    span: 8,
+    offset: 8,
   },
   md: {
-    span: 14,
-    offset: 5
+    span: 12,
+    offset: 6,
   },
   xs: {
     span: 20,
-    offset: 2
+    offset: 2,
   },
 }
 
 export const titleLayout = {
-  md: {
-    span: 16,
-    offset: 4
-  },
-  xs: {
-    span: 24
-  },
   style: {
-    marginBottom: '2rem'
-  }
+    marginBottom: '2rem',
+  },
 }
 
 export const layoutStyle = {
@@ -33,7 +26,7 @@ export const layoutStyle = {
   width: '100%',
   display: 'flex',
   overflow: 'auto',
-  justifyContent: 'center'
+  justifyContent: 'center',
 }
 
 export const SignupContainer = styled.div`
