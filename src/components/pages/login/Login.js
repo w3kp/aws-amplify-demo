@@ -28,7 +28,7 @@ const Login = () => {
     <Layout style={styles.layoutStyle}>
       <Layout.Content style={styles.contentStyle}>
         <Col {...styles.columnLayout}>
-          <Title>Sign In</Title>
+          <Title>Sign In NOW from APPER!</Title>
           <Text type='secondary'>Failure will never overtake me if my determination to succeed is strong enough.</Text>
           <Divider />
           <LoginForm submit={onLogin} loading={loading} apiError={apiError} clearError={clearErrorCB} />
