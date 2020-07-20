@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography } from 'antd'
-import ButtonComponent from 'components/ui/button's
+import ButtonComponent from 'components/ui/button'
 
 import * as styles from './DashboardStyles'
 
