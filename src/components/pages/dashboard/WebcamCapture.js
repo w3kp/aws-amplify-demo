@@ -4,11 +4,10 @@ import ButtonComponent from 'components/ui/button'
 
 const WebcamCapture = () => {
   const videoConstraints = {
-    width: { min: 3840 },
-    height: { min: 2160 },
-    aspectRatio: 1.333333333,
-    // facingMode: { exact: 'user' },
-    facingMode: 'user',
+    width: { min: 480 },
+    height: { min: 720 },
+    aspectRatio: 0.6666666667,
+    facingMode: { exact: 'environment' },
   }
 
   const webcamRef = React.useRef(null)
@@ -23,12 +22,11 @@ const WebcamCapture = () => {
 
   return (
     <>
-      <Webcam videoConstraints={videoConstraints} width={420} height={720} audio={false} ref={webcamRef} screenshotFormat='image/jpeg' />
-
+      <Webcam videoConstraints={videoConstraints} width={440} height={720} audio={false} ref={webcamRef} screenshotFormat='image/jpeg' style={{ margin: '40px 0' }} />
       <ButtonComponent block type='primary' onClick={capture}>
         Capture Photo
       </ButtonComponent>
-      {imgSrc && <img alt='' src={imgSrc} />}
+      {imgSrc && <img alt='' src={imgSrc} style={{ margin: '40px 0' }} />}
     </>
   )
 }
