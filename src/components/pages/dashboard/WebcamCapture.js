@@ -7,7 +7,6 @@ const WebcamCapture = () => {
     width: { min: 1024 },
     height: { min: 1024 },
     facingMode: { exact: 'environment' },
-    // facingMode: 'user',
   }
 
   const webcamRef = React.useRef(null)
