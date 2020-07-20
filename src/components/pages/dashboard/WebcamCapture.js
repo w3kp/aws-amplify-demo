@@ -23,7 +23,7 @@ const WebcamCapture = () => {
       <ButtonComponent block type='primary' onClick={capture}>
         Capture Photo
       </ButtonComponent>
-      <div style={{ paddingTop: '40px', background: 'red' }}>{imgSrc && <img alt='' src={imgSrc} width={280} height={280} style={{ paddingTop: '60px', background: 'white' }} />}</div>
+      <div style={{ paddingTop: '40px', background: 'transparent' }}>{imgSrc && <img alt='' src={imgSrc} width={280} height={280} style={{ paddingTop: '60px', background: 'white' }} />}</div>
     </>
   )
 }
