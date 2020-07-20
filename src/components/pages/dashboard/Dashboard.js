@@ -9,8 +9,9 @@ const { Text } = Typography
 
 const Dashboard = () => {
   const videoConstraints = {
-    width: { min: 1024 },
-    height: { min: 1024 },
+    width: { min: 2048 },
+    height: { min: 2048 },
+    aspectRatio: 1,
     facingMode: { exact: 'environment' },
   }
   const webcamRef = React.useRef(null)
