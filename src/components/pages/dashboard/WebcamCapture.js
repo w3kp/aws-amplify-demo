@@ -20,9 +20,9 @@ const WebcamCapture = () => {
 
   return (
     <>
-      <ButtonComponent type='primary' onClick={capture} style={{ paddingBottom: '40px' }}>
+      {/* <ButtonComponent type='primary' onClick={capture} style={{ paddingBottom: '40px' }}>
         Capture Photo
-      </ButtonComponent>
+      </ButtonComponent> */}
       <Webcam videoConstraints={videoConstraints} width={280} audio={false} ref={webcamRef} screenshotFormat='image/jpeg' />
       {imgSrc && <img alt='' src={imgSrc} width={280} style={{ paddingTop: '60px', background: 'transparent' }} />}
     </>
