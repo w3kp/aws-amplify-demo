@@ -14,10 +14,8 @@ const WebcamCapture = () => {
   const [imgSrc, setImgSrc] = React.useState(null)
 
   const capture = React.useCallback(() => {
-    console.log(webcamRef)
     const imageSrc = webcamRef.current.getScreenshot()
     setImgSrc(imageSrc)
-    console.log(imageSrc)
   }, [webcamRef, setImgSrc])
 
   return (
